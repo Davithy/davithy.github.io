@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aron Ferreras | Central</title>
+    <title>Aron Ferreras | The Many Skies</title>
     <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
     <meta name="description"
         content="Aron is a digital media artist who works to create characters through illustrations, 3D models, and animations.">
@@ -18,12 +18,9 @@
 </head>
 
 <body class="home">
+
+<!-- =================================== NAV BAR ==================================== -->
     <header>
-        <!-- 
-        ==================================
-        ==           NAV BAR            ==
-        ================================== 
-        -->
         <nav class="navbar">
             <div class="logo">
                 <a href="#">Aron Ferreras</a>
@@ -36,8 +33,13 @@
                     <a href="resume/">Resume</a>
                     </div>
                 </li>
-                <li><a href="projects/">Works</a></li>
+                <li><button class="dropbtn">Illustrations &#x25BC;</button>
+                    <div class="dropdown-menu" id="dropdown-links">
+                    <a href="projects/">Characters</a>
+                    <a href="projects/">Backgrounds</a>
+                    </div></li>
             </ul>
+<!-- === FOR SMALLER SCREENS === -->
             <div class="menu-toggle">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -46,8 +48,9 @@
         </nav>
     </header>
 
-    <div class="content-wrapper">
-        <main>
+<!-- =================================== IMAGE CAROUSEL ==================================== -->
+    <main>
+        <div class="carousel">
             <section class="slideshow">
                 <a class="prev" id="prevSlide">&#10094;</a>
                 <a class="next" id="nextSlide">&#10095;</a>
@@ -60,9 +63,10 @@
                 <img class="slides fade" src="assets/mixiebg-compressed.webp"
                     alt="A streamer's room which is aboard a deep sea submarine.">
             </section>
-        </main>
-    </div>
+        </div>
+    </main>
 
+<!-- =================================== FOOTER ==================================== -->
     <footer>
         <p>© 2025 by Aron Ferreras</p>
 
