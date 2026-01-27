@@ -231,7 +231,7 @@ HOME
     z-index: 0;
     background-color: black;
     display: flex;
-    overflow-x: hidden;
+    overflow: hidden;
     justify-content: center;
 }
 
