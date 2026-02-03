@@ -1,3 +1,5 @@
+// Carousel functions
+
 let slideIndex = 1;
 
 function plusSlides(n) {
@@ -28,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (slideBack && slideNext) {
     showSlides(slideIndex);
+    let slideInt = 5000;
 
     slideBack.addEventListener('click', () => {
       plusSlides(-1);
@@ -39,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setInterval(function () {
       plusSlides(1);
-    }, 5000);
+    }, slideInt);
   }
 
   if (menuToggle && navLinks) {

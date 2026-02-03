@@ -5,18 +5,18 @@ https://www.paulirish.com/2012/box-sizing-border-box-ftw/
  62.5% Fix: https: //www.aleksandrhovhannisyan.com/blog/62-5-percent-font-size-trick/
 */
 
-/* CSS HEX
+/* CSS HEX */
+:root {
 --alice-blue: #f4faffff;
 --bice-blue: #386fa4ff;
 --raisin-black: #272727ff;
 --madder: #a31621ff;
 --rojo: #db222aff;
-== maybe ==
 --golden-glow: #ead637ff;
 --golden-bronze: #cba328ff;
 --bright-amber: #f9c80eff;
 --tiger-flame: #f86624ff;
-/* Basic styles for the navbar */
+}
 
 /* =========================================
 CSS RESETS
@@ -55,8 +55,8 @@ NAV BAR
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #f4faffff;
-    color: #386fa4ff;
+    background-color: var(--alice-blue);
+    color: var(--bice-blue);
     font-family: "Merriweather Sans", sans-serif;
     position: relative;
     width: 100vw;
@@ -75,7 +75,7 @@ NAV BAR
     border: none;
     background: none;
     cursor: pointer;
-    color: #386fa4ff;
+    color: var(--bice-blue);
     text-decoration: none;
     transition: color 0.3s, text-decoration 0.3s, background-color 0.3s;
     padding: 5px 10px;
@@ -83,14 +83,14 @@ NAV BAR
 
 .dropbtn:hover,
 li:has(.dropdown-menu.show) .dropbtn {
-    color: #f4faffff;
-    background-color: #272727ff;
+    color: var(--alice-blue);
+    background-color: var(--raisin-black);
     border-radius: 4px;
 }
 
 .dropdown-menu {
     display: none;
-    background-color: #f4faffff;
+    background-color: var(--alice-blue);
     position: absolute;
     min-width: 7em;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
@@ -100,7 +100,7 @@ li:has(.dropdown-menu.show) .dropbtn {
 
 /* Logo styling */
 .logo a {
-    color: #386fa4ff;
+    color: var(--bice-blue);
     font-family: "Cal Sans", sans-serif;
     text-decoration: none;
     font-size: 24px;
@@ -120,7 +120,7 @@ li:has(.dropdown-menu.show) .dropbtn {
 }
 
 .nav-links a {
-    color: #386fa4ff;
+    color: var(--bice-blue);
     text-decoration: none;
     font-size: 18px;
     transition: color 0.3s, text-decoration 0.3s, background-color 0.3s;
@@ -129,15 +129,11 @@ li:has(.dropdown-menu.show) .dropbtn {
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: #f4faffff;
-    /* Lighter color for active/hover */
-    background-color: #272727ff;
-    /* Darker green background on hover */
+    color: var(--alice-blue);
+    background-color: var(--raisin-black);
     border-radius: 4px;
-    /* Optional: rounded corners */
 }
 
-/* Menu toggle button for mobile view */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -145,7 +141,7 @@ li:has(.dropdown-menu.show) .dropbtn {
 }
 
 .menu-toggle .bar {
-    background-color: #386fa4ff;
+    background-color: var(--bice-blue);
     height: 3px;
     width: 25px;
     margin: 5px;
@@ -160,7 +156,7 @@ li:has(.dropdown-menu.show) .dropbtn {
         position: absolute;
         top: 60px;
         left: 0;
-        background-color: #f4faffff;
+        background-color: var(--alice-blue);
         z-index: 100;
         /* Green background for mobile view */
     }
@@ -189,9 +185,9 @@ li:has(.dropdown-menu.show) .dropbtn {
 
     .nav-links a:hover,
     .nav-links a.active {
-        color: #f4faffff;
+        color: var(--alice-blue);
         /* Lighter color for active/hover */
-        background-color: #272727ff;
+        background-color: var(--raisin-black);
         /* Darker green background on hover */
         border-radius: 4px;
         /* Optional: rounded corners */
@@ -209,6 +205,7 @@ li:has(.dropdown-menu.show) .dropbtn {
     .menu-toggle {
         display: flex;
     }
+
 }
 
 /* =========================================
@@ -221,18 +218,20 @@ HOME
     height: 100dvh;
 }
 
-.slideshow {
+.carousel {
     width: 100vw;
     height: 100vh;
     height: 100dvh;
+    background: no-repeat center/100% url(../assets/skybg.png);
     position: relative;
-    top: 0;
-    left: 0;
     z-index: 0;
-    background-color: black;
     display: flex;
     overflow: hidden;
     justify-content: center;
+}
+
+.slideshow {
+    background-color: black;
 }
 
 .slides {
@@ -246,15 +245,18 @@ HOME
 .next {
     cursor: pointer;
     position: fixed;
-    top: 45%;
-    width: auto;
-    padding: 32px;
-    color: #f4faffff;
+    top: 50%;
+    color: var(--bice-blue);
+    background-color: var(--alice-blue);
+    opacity: 0.5;
+    padding: 5px 20px 5px 17px;
     font-weight: bold;
     font-size: 24px;
-    transition: 0.6s ease;
-    border-radius: 0 25px 25px 0;
+    transition: 0.2s ease;
+    border-radius: 50%;
+    text-align: center;
     z-index: 10;
+    margin: 0 1.3vw;
 }
 
 .prev {
@@ -263,13 +265,13 @@ HOME
 
 .next {
     right: 0;
-    border-radius: 25px 0 0 25px;
 }
 
 .prev:hover,
 .next:hover {
-    color: #f4faffff;
-    background-color: #272727ff;
+    color: var(--alice-blue);
+    background-color: var(--raisin-black);
+    opacity: 1;
 }
 
 .fade {
@@ -286,6 +288,13 @@ HOME
         opacity: 0.75
     }
 }
+
+
+/* @media screen and (max-width: 900px) {
+    .shift {
+        translate: -400px;
+    }
+} */
 
 /* =========================================
 FLEXBOX BODY
@@ -431,7 +440,7 @@ PROJECTS     .projects-works
     outline: none;
     text-decoration: none;
     padding: 12px 16px;
-    background-color: #f4faffff;
+    background-color: var(--alice-blue);
     cursor: pointer;
     font-family: "Merriweather Sans", sans-serif;
 }
@@ -441,8 +450,8 @@ PROJECTS     .projects-works
 }
 
 .btn.active {
-    background-color: #272727ff;
-    color: #f4faffff;
+    background-color: var(--raisin-black);
+    color: var(--alice-blue);
 }
 
 .project-image img {
@@ -546,8 +555,8 @@ FOOTER
 
 footer {
     font-family: "Merriweather Sans", sans-serif;
-    background: #386fa4ff;
-    color: #f4faffff;
+    background: var(--bice-blue);
+    color: var(--alice-blue);
     position: relative;
     bottom: 0;
     width: 100vw;
@@ -565,7 +574,7 @@ footer {
 
 .socials li {
     display: inline-block;
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
 .socials img {
